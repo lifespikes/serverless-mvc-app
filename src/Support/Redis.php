@@ -23,15 +23,13 @@ class Redis
      */
     public static function handleSessions(): void
     {
-        session_set_save_handler(
-            new Handler(
-                new Client([
-                    'scheme' => 'tcp',
-                    'host' => 'localhost',
-                    'port' => 6379,
-                ])
-            )
-        );
+        (new Handler(
+            new Client([
+                'scheme' => 'tcp',
+                'host' => 'localhost',
+                'port' => 6379,
+            ])
+        ))->register();
 
         session_start();
     }
