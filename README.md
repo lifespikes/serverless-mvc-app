@@ -7,6 +7,9 @@ This repository is meant for use by viewers of our serverless PHP deployments us
 course. However, if there is anything you feel you can make use of in this repository please
 don't hesitate to do so!
 
+We built this repo to help you learn about serverless regardless of your framework of choice, but
+please ensure you use a proper framework when you start putting pen to paper.
+
 ## Requirements
 - [PHP 8.1](https://www.php.net/downloads.php)
 - [Composer](https://getcomposer.org/) _(Just necessary for the AWS SDK)_
