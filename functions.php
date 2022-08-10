@@ -1,9 +1,16 @@
 <?php
 
 const VIEW_DIR = __DIR__.'/views';
+const SECRETS = __DIR__.'/secrets.php';
 
 function config($key): array
 {
+    if (file_exists(SECRETS) && is_array($secrets = (include_once SECRETS))) {
+        foreach ($secrets as $name => $value) {
+            putenv("$name=$value");
+        }
+    }
+
     return [
         'db' => [
             'host'      =>  getenv('DB_HOST') ?: 'localhost',
@@ -17,7 +24,9 @@ function config($key): array
             'secret'    =>  getenv('AWS_SECRET_ACCESS_KEY') ?: '',
             'region'    =>  getenv('AWS_REGION') ?: 'us-east-1',
 
-            'bucket'    =>  getenv('AWS_BUCKET') ?: 'lambda-example-app'
+            'bucket'    =>  getenv('AWS_BUCKET') ?: 'lambda-example-app',
+
+            'cdn'       => getenv('CLOUDFRONT_URI') ?: '',
         ]
     ][$key];
 }

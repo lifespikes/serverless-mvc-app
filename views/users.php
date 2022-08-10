@@ -25,7 +25,7 @@ $users = User::all();
         <?php foreach ($users as $user): ?>
             <tr>
                 <td><?php echo $user->id; ?></td>
-                <td><img src="<?php echo $user->picture; ?>" alt="<?php echo $user->name; ?>" /></td>
+                <td><img src="<?=sprintf('%s/%s', config('aws')['cdn'], $user->picture);?>" height="30" alt="<?=$user->name;?>" /></td>
                 <td><?php echo $user->name; ?></td>
                 <td><?php echo $user->email; ?></td>
             </tr>
