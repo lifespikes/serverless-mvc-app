@@ -10,6 +10,13 @@ don't hesitate to do so!
 We built this repo to help you learn about serverless regardless of your framework of choice, but
 please ensure you use a proper framework when you start putting pen to paper.
 
+## How to run
+We recommend using PHP's built-in web server to start the app. Make sure you
+specify that the webroot must be `public`:
+```bash
+php -S localhost:8080 -t public
+```
+
 ## Requirements
 - [PHP 8.1](https://www.php.net/downloads.php)
 - [Composer](https://getcomposer.org/) _(Just necessary for the AWS SDK)_
