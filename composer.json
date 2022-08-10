@@ -1,0 +1,19 @@
+{
+  "name": "lifespikes/lambda-example",
+  "version": "0.0.1",
+
+  "require": {
+    "php": "^8.1",
+    "ext-pdo": "*",
+    "aws/aws-sdk-php": "^3.232"
+  },
+
+  "autoload": {
+    "psr-4": {
+      "LifeSpikes\\": "src/"
+    },
+    "files": [
+      "config.php"
+    ]
+  }
+}
