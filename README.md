@@ -26,6 +26,6 @@ We believe that the best way to learn is by doing. You can feel free continue to
 this sample project to test out concepts you think may work differently in a 
 serverless environment.
 
-**`public/index.php`** - Entrypoint for the app, routes are registered here.
-**`functions.php`** - `config` and `view` helpers
+- **`public/index.php`** - Entrypoint for the app, routes are registered here.
+- **`functions.php`** - `config` and `view` helpers
 
