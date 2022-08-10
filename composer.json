@@ -5,7 +5,8 @@
   "require": {
     "php": "^8.1",
     "ext-pdo": "*",
-    "aws/aws-sdk-php": "^3.232"
+    "aws/aws-sdk-php": "^3.232",
+    "predis/predis": "^2.0"
   },
 
   "autoload": {

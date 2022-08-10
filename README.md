@@ -19,10 +19,10 @@ php -S localhost:8080 -t public
 
 ## Requirements
 - [PHP 8.1](https://www.php.net/downloads.php)
-- [Composer](https://getcomposer.org/) _(Just necessary for the AWS SDK)_
+- [Composer](https://getcomposer.org/) _(Just necessary for the AWS SDK and Predis)_
 
 ## Credentials
-You can provide database and AWS credentials in the following ways:
+You can provide database, Redis, and AWS credentials in the following ways:
 - Environment variables
 - A `secrets.php` file in the root of the repository, it is similar to a `.env` file
   - The `secrets.example.php` file is a good template for starters
@@ -36,6 +36,11 @@ We believe that the best way to learn is by doing. You can feel free continue to
 this sample project to test out concepts you think may work differently in a 
 serverless environment.
 
+**Important files:**
 - **`public/index.php`** - Entrypoint for the app, routes are registered here.
 - **`functions.php`** - `config` and `view` helpers
+
+**Other important things:**
+- Predis is used to persist and centralize session data
+- Temporary files must be truly temporary for a single request
 

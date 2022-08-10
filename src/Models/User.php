@@ -3,12 +3,14 @@
 namespace LifeSpikes\Models;
 
 use Exception;
+use Serializable;
 
-class User extends Model
+class User extends Model implements Serializable
 {
     public int $id;
     public string $name;
     public string $email;
+    public string $password;
     public string $picture;
 
     public function __construct(public array $attrs = [])
@@ -35,5 +37,32 @@ class User extends Model
         return self::find(
             self::insert('users', $payload)
         );
+    }
+
+    public static function findByEmail(string $email): ?User
+    {
+        return ($row = self::stmt('SELECT * FROM users WHERE email = ?', [$email])->fetch())
+            ? new User($row)
+            : null;
+    }
+
+    public function __serialize(): array
+    {
+        return get_object_vars($this);
+    }
+
+    public function __unserialize(array $data): void
+    {
+        $this->populateFrom($data);
+    }
+
+    public function serialize(): array|string|null
+    {
+        return $this->__serialize();
+    }
+
+    public function unserialize(string $data)
+    {
+        $this->__unserialize(unserialize($data));
     }
 }

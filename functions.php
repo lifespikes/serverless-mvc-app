@@ -27,6 +27,12 @@ function config($key): array
             'bucket'    =>  getenv('AWS_BUCKET') ?: 'lambda-example-app',
 
             'cdn'       => getenv('CLOUDFRONT_URI') ?: '',
+        ],
+
+        'redis' => [
+            'host'      =>  getenv('REDIS_HOST') ?: 'localhost',
+            'port'      =>  getenv('REDIS_PORT') ?: 6379,
+            'password'  =>  getenv('REDIS_PASSWORD') ?: ''
         ]
     ][$key];
 }

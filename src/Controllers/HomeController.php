@@ -2,11 +2,9 @@
 
 namespace LifeSpikes\Controllers;
 
-use LifeSpikes\Models\User;
-
 class HomeController
 {
-    public function index(): string
+    public function index()
     {
         return layout('master', 'index');
     }

@@ -24,8 +24,13 @@
     </div>
 
     <div>
-        <label for='picture'>Profile Picture</label>
-        <input type='file' name='picture' id='picture'>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password">
+    </div>
+
+    <div>
+        <label for="picture">Profile Picture</label>
+        <input type="file" name="picture" id="picture">
     </div>
 
     <div>
