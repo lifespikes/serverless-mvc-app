@@ -1,0 +1,4 @@
+#!/usr/bin/env php
+<?php
+
+shell_exec('php -S localhost:8001 -t public');
