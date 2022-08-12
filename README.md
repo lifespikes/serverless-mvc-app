@@ -31,7 +31,7 @@ You can take a look at the `functions.php` file to see what environment variable
 
 **This data will be fed in by Lambda, so there is no need to add it to your app bundle.**
 
-## Notes and Docs
+## Notes and docs
 We believe that the best way to learn is by doing. You can feel free continue to use
 this sample project to test out concepts you think may work differently in a 
 serverless environment.
